@@ -97,7 +97,7 @@
       <div class="col-lg-4" :class="{ 'text-right': isRTL }">
         <card type="chart">
           <template slot="header">
-            <h5 class="card-category">Inventry Level</h5>
+            <h5 class="card-category">Inventory Level</h5>
             <h3 class="card-title">
               <i class="tim-icons icon-send text-success"></i> 1500 units
             </h3>

@@ -54,8 +54,8 @@ const routes = [
         component: Typography,
       },
       {
-        path: "table-list",
-        name: "table-list",
+        path: "inventory",
+        name: "inventory",
         component: TableList,
       },
     ],

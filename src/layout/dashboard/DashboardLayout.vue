@@ -7,11 +7,13 @@
           :name="$t('sidebar.dashboard')"
           icon="tim-icons icon-chart-pie-36"
         />
+
         <sidebar-link
-          to="/table-list"
-          :name="'Inventry'"
+          to="/inventory"
+          :name="'Inventory'"
           icon="tim-icons icon-puzzle-10"
         />
+
         <sidebar-link
           to="/profile"
           :name="$t('sidebar.userProfile')"
@@ -35,6 +37,7 @@ import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
+
 export default {
   components: {
     TopNavbar,

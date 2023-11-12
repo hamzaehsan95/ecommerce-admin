@@ -6,7 +6,7 @@
       <div class="block block-two"></div>
       <div class="block block-three"></div>
       <div class="block block-four"></div>
-      <a href="#">
+      <a href="/">
         <img class="avatar" src="/favicon.png" alt="..." />
         <h5 class="title">{{ user.fullName }}</h5>
       </a>

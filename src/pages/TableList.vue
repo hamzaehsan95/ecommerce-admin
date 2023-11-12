@@ -1,6 +1,10 @@
 <template>
   <div class="row">
     <div class="col-12">
+      <div class="mb-3">
+        <base-button type="primary" fill>Add Product</base-button>
+      </div>
+
       <card :title="table1.title">
         <div class="table-responsive">
           <base-table
@@ -12,74 +16,71 @@
         </div>
       </card>
     </div>
-
-    <div class="col-12">
-      <card class="card-plain">
-        <div class="table-full-width table-responsive">
-          <base-table
-            :title="table2.title"
-            :sub-title="table2.subTitle"
-            :data="table2.data"
-            :columns="table2.columns"
-          >
-          </base-table>
-        </div>
-      </card>
-    </div>
   </div>
 </template>
 <script>
 import { BaseTable } from "@/components";
-const tableColumns = ["Name", "Country", "City", "Salary"];
+const tableColumns = ["Name", "Category", "Level"];
 const tableData = [
   {
     id: 1,
-    name: "Dakota Rice",
-    salary: "$36.738",
-    country: "Niger",
-    city: "Oud-Turnhout",
+    name: "Laptop",
+    category: "Electronics",
+    level: "20",
   },
   {
     id: 2,
-    name: "Minerva Hooper",
-    salary: "$23,789",
-    country: "Curaçao",
-    city: "Sinaai-Waas",
+    name: "Smartphone",
+    category: "Electronics",
+    level: "15",
   },
   {
     id: 3,
-    name: "Sage Rodriguez",
-    salary: "$56,142",
-    country: "Netherlands",
-    city: "Baileux",
+    name: "LED TV",
+    category: "Electronics",
+    level: "12",
   },
   {
     id: 4,
-    name: "Philip Chaney",
-    salary: "$38,735",
-    country: "Korea, South",
-    city: "Overland Park",
+    name: "Men's Jeans",
+    category: "Clothing",
+    level: "30",
   },
   {
     id: 5,
-    name: "Doris Greene",
-    salary: "$63,542",
-    country: "Malawi",
-    city: "Feldkirchen in Kärnten",
+    name: "Women's Shoes",
+    category: "Footwear",
+    level: "9",
   },
   {
     id: 6,
-    name: "Mason Porter",
-    salary: "$98,615",
-    country: "Chile",
-    city: "Gloucester",
+    name: "Coffee Maker",
+    category: "Appliances",
+    level: "8",
   },
   {
     id: 7,
-    name: "Jon Porter",
-    salary: "$78,615",
-    country: "Portugal",
-    city: "Gloucester",
+    name: "Fitness Tracker",
+    category: "Electronics",
+    level: "2",
+  },
+  {
+    id: 8,
+    name: "Backpack",
+    category: "Accessories",
+    level: "22",
+  },
+  {
+    id: 9,
+    name: "Cookware Set",
+    category: "Kitchen",
+    level: "25",
+  },
+  {
+    id: 10,
+    name: "Desk Chair",
+    category: "Furniture",
+    level: "29",
   },
 ];
 
@@ -90,12 +91,7 @@ export default {
   data() {
     return {
       table1: {
-        title: "Simple Table",
-        columns: [...tableColumns],
-        data: [...tableData],
-      },
-      table2: {
-        title: "Table on Plain Background",
+        title: "Inventory",
         columns: [...tableColumns],
         data: [...tableData],
       },

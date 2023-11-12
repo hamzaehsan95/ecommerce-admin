@@ -8,24 +8,14 @@
           icon="tim-icons icon-chart-pie-36"
         />
         <sidebar-link
-          to="/notifications"
-          :name="$t('sidebar.notifications')"
-          icon="tim-icons icon-bell-55"
+          to="/table-list"
+          :name="'Inventry'"
+          icon="tim-icons icon-puzzle-10"
         />
         <sidebar-link
           to="/profile"
           :name="$t('sidebar.userProfile')"
           icon="tim-icons icon-single-02"
-        />
-        <sidebar-link
-          to="/table-list"
-          :name="$t('sidebar.tableList')"
-          icon="tim-icons icon-puzzle-10"
-        />
-        <sidebar-link
-          to="/typography"
-          :name="$t('sidebar.typography')"
-          icon="tim-icons icon-align-center"
         />
       </template>
     </side-bar>

@@ -2,8 +2,55 @@
   <div class="row">
     <div class="col-12">
       <div class="mb-3">
-        <base-button type="primary" fill>Add Product</base-button>
+        <base-button fill type="primary" @click="addProductModalVisible = true">
+          Add Product
+        </base-button>
       </div>
+
+      <modal
+        :show.sync="addProductModalVisible"
+        class=""
+        id="addProductModal"
+        :centered="false"
+        :show-close="true"
+      >
+        <div>
+          <div class="col-md-12">
+            <input
+              label="Name"
+              placeholder="Name"
+              v-model="product.name"
+              type="text"
+              class="text-dark form-control mt-3"
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              label="Category"
+              placeholder="Category"
+              v-model="product.category"
+              class="text-dark form-control mt-3"
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              label="Level"
+              placeholder="Level"
+              v-model="product.level"
+              class="text-dark form-control mt-3"
+            />
+          </div>
+
+          <base-button
+            fill
+            type="primary"
+            @click="addProduct()"
+            class="ml-3 mt-3"
+          >
+            Add
+          </base-button>
+        </div>
+      </modal>
 
       <card :title="table1.title">
         <div class="table-responsive">
@@ -20,6 +67,7 @@
 </template>
 <script>
 import { BaseTable } from "@/components";
+import Modal from "@/components/Modal";
 const tableColumns = ["Name", "Category", "Level"];
 const tableData = [
   {
@@ -83,19 +131,47 @@ const tableData = [
     level: "29",
   },
 ];
+const initialProduct = {
+  name: "",
+  category: "",
+  level: null,
+};
 
 export default {
   components: {
     BaseTable,
+    Modal,
   },
   data() {
     return {
+      addProductModalVisible: false,
+      product: { ...initialProduct },
       table1: {
         title: "Inventory",
         columns: [...tableColumns],
         data: [...tableData],
       },
     };
+  },
+  methods: {
+    addProduct() {
+      this.table1 = {
+        ...this.table1,
+        data: [
+          ...tableData,
+          {
+            id: this.table1.data.length,
+            name: this.product.name,
+            category: this.product.category,
+            level: this.product.level,
+          },
+        ],
+      };
+
+      this.product = { ...initialProduct };
+
+      this.addProductModalVisible = false;
+    },
   },
 };
 </script>

@@ -2,7 +2,7 @@
 
 ## Recommended IDE Setup
 
-## Project Setup
+## Project Setup using node version 18 or above
 
 ```sh
 npm install
